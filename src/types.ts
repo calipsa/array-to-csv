@@ -13,9 +13,9 @@ export type ColumnObject = Required<ColumnObjectOptional>
 export type Column = string | ColumnObjectOptional
 
 // get only strings in union type
-type OnlyStrings<T> =  T extends string ? T : never
+type OnlyStrings<T> =  Extract<T, string>
 // get only objects in union type
-type OnlyObjects<T> = T extends object ? T : never
+type OnlyObjects<T> = Extract<T, object>
 
 // if key is a string, then key, otherwise key.key
 export type ColumnKeys<T extends Column> = OnlyStrings<T> | OnlyObjects<T>['key']

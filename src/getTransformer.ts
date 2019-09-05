@@ -26,7 +26,7 @@ const normalizeColumns = (c: Column) =>
 
 export default <C extends Column>(columns: readonly C[]) => {
   const cols = columns.map(normalizeColumns)
-  return <O extends Obj<ColumnKeys<C>>>(item: O) => {
+  return <O extends Obj<ColumnKeys<C>>>(item: Readonly<O>) => {
     // @ts-ignore
     const o: Record<ColumnLabels<C>, string> = {}
     for (const { key, label, transform } of cols) {
