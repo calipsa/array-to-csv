@@ -14,7 +14,7 @@ const config = {
 
 export = <C extends Column>(columns: readonly C[]) => {
   const transformer = getTransformer(columns)
-  return (list: readonly Obj<ColumnKeys<C>>[]) => {
+  return (list: readonly Readonly<Obj<ColumnKeys<C>>>[]) => {
     const mapped = list.map(transformer)
     return unparse(mapped, config)
   }
