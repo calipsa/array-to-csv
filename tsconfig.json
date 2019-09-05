@@ -4,6 +4,7 @@
     "module": "commonjs",
     "sourceMap": true,
     "moduleResolution": "node",
+    "esModuleInterop": true,
     "pretty": true,
     "declaration": true,
     "alwaysStrict": true,
