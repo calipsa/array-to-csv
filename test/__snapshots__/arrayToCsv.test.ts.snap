@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`arrayToCsv should convert to csv correctly 1`] = `
+"Name,parent,Created at (UTC),count
+cam3,site_random,\\"17 Jun 2019, 13:20\\",11
+test 2,1foooooobgar1,,0
+view,1foooooobgar1,,41
+DCV N1,goooo parent,,50
+DCV N2,E000000000000090,\\"17 Jun 2019, 13:21\\",81
+DCV N1,E000000000000090,\\"14 Jun 2019, 14:17\\",6
+DCV N2,E000000000000090,\\"14 Jun 2019, 14:17\\",6
+foo,üñiçøď€,\\"24 Jun 2019, 15:00\\",4
+sdfsdf,siteo,\\"06 Jun 2019, 17:00\\",5"
+`;
+
+exports[`arrayToCsv should transform correctly 1`] = `
+Object {
+  "Created at (UTC)": "17 Jun 2019, 13:20",
+  "Name": "cam3",
+  "count": "11",
+  "parent": "site_random",
+}
+`;

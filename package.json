@@ -1,0 +1,39 @@
+{
+  "name": "@calipsa/array-to-csv",
+  "version": "1.0.0",
+  "description": "Convert array to CSV",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "test": "jest --no-cache",
+    "lint": "tslint './src/**/*.ts'",
+    "build": "rm -rf dist && tsc",
+    "prepublishOnly": "npm run build",
+    "publish": "np"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/calipsa/array-to-csv"
+  },
+  "keywords": [
+    "array",
+    "convert",
+    "csv"
+  ],
+  "author": "Anton Veselev",
+  "license": "ISC",
+  "dependencies": {
+    "papaparse": "^5.0.2"
+  },
+  "devDependencies": {
+    "@types/jest": "^24.0.18",
+    "@types/moment-timezone": "^0.5.12",
+    "@types/papaparse": "^5.0.1",
+    "jest": "^24.9.0",
+    "moment-timezone": "^0.5.26",
+    "np": "^5.0.3",
+    "ts-jest": "^24.0.2",
+    "tslint": "^5.19.0",
+    "typescript": "^3.5.3"
+  }
+}
