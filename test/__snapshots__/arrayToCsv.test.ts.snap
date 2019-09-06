@@ -2,20 +2,20 @@
 
 exports[`arrayToCsv should convert to csv correctly 1`] = `
 "Name,parent,Created at (UTC),count
-cam3,site_random,\\"17 Jun 2019, 13:20\\",11
+cam3,site_random,\\"Mon, 17 Jun 2019 13:20:25 GMT\\",11
 test 2,1foooooobgar1,,0
 view,1foooooobgar1,,41
 DCV N1,goooo parent,,50
-DCV N2,E000000000000090,\\"17 Jun 2019, 13:21\\",81
-DCV N1,E000000000000090,\\"14 Jun 2019, 14:17\\",6
-DCV N2,E000000000000090,\\"14 Jun 2019, 14:17\\",6
-foo,üñiçøď€,\\"24 Jun 2019, 15:00\\",4
-sdfsdf,siteo,\\"06 Jun 2019, 17:00\\",5"
+DCV N2,E000000000000090,\\"Mon, 17 Jun 2019 13:21:55 GMT\\",81
+DCV N1,E000000000000090,\\"Fri, 14 Jun 2019 14:17:44 GMT\\",6
+DCV N2,E000000000000090,\\"Fri, 14 Jun 2019 14:17:43 GMT\\",6
+foo,üñiçøď€,\\"Mon, 24 Jun 2019 15:00:00 GMT\\",4
+sdfsdf,siteo,\\"Thu, 06 Jun 2019 17:00:00 GMT\\",5"
 `;
 
 exports[`arrayToCsv should transform correctly 1`] = `
 Object {
-  "Created at (UTC)": "17 Jun 2019, 13:20",
+  "Created at (UTC)": "Mon, 17 Jun 2019 13:20:25 GMT",
   "Name": "cam3",
   "count": "11",
   "parent": "site_random",

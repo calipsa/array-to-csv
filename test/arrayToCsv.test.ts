@@ -1,5 +1,3 @@
-import moment from 'moment-timezone'
-
 import arrayToCsv from '../src'
 import getTransformer from '../src/getTransformer'
 
@@ -7,7 +5,7 @@ import list from './data/list'
 
 function formatDate(dateStr: any) {
   return dateStr
-    ? moment(dateStr).tz('UTC').format('DD MMM YYYY, HH:mm')
+    ? new Date(dateStr).toUTCString()
     : ''
 }
 
