@@ -27,9 +27,8 @@ const toCsv = arrayToCsv(columns)
 
 describe('arrayToCsv', () => {
   it('should transform correctly', () => {
-    const item = list[0]
     const transform = getTransformer(columns)
-    const result = transform(item)
+    const result = list.map(transform)
     expect(result).toMatchSnapshot()
   })
 

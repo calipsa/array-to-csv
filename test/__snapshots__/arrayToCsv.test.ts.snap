@@ -14,10 +14,60 @@ sdfsdf,siteo,\\"Thu, 06 Jun 2019 17:00:00 GMT\\",5"
 `;
 
 exports[`arrayToCsv should transform correctly 1`] = `
-Object {
-  "Created at (UTC)": "Mon, 17 Jun 2019 13:20:25 GMT",
-  "Name": "cam3",
-  "count": "11",
-  "parent": "site_random",
-}
+Array [
+  Object {
+    "Created at (UTC)": "Mon, 17 Jun 2019 13:20:25 GMT",
+    "Name": "cam3",
+    "count": "11",
+    "parent": "site_random",
+  },
+  Object {
+    "Created at (UTC)": "",
+    "Name": "test 2",
+    "count": "0",
+    "parent": "1foooooobgar1",
+  },
+  Object {
+    "Created at (UTC)": "",
+    "Name": "view",
+    "count": "41",
+    "parent": "1foooooobgar1",
+  },
+  Object {
+    "Created at (UTC)": "",
+    "Name": "DCV N1",
+    "count": "50",
+    "parent": "goooo parent",
+  },
+  Object {
+    "Created at (UTC)": "Mon, 17 Jun 2019 13:21:55 GMT",
+    "Name": "DCV N2",
+    "count": "81",
+    "parent": "E000000000000090",
+  },
+  Object {
+    "Created at (UTC)": "Fri, 14 Jun 2019 14:17:44 GMT",
+    "Name": "DCV N1",
+    "count": "6",
+    "parent": "E000000000000090",
+  },
+  Object {
+    "Created at (UTC)": "Fri, 14 Jun 2019 14:17:43 GMT",
+    "Name": "DCV N2",
+    "count": "6",
+    "parent": "E000000000000090",
+  },
+  Object {
+    "Created at (UTC)": "Mon, 24 Jun 2019 15:00:00 GMT",
+    "Name": "foo",
+    "count": "4",
+    "parent": "üñiçøď€",
+  },
+  Object {
+    "Created at (UTC)": "Thu, 06 Jun 2019 17:00:00 GMT",
+    "Name": "sdfsdf",
+    "count": "5",
+    "parent": "siteo",
+  },
+]
 `;
