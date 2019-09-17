@@ -1,25 +1,27 @@
 import {
-  ColumnObjectOptional,
   ColumnObject,
   Column,
   Obj,
   ColumnKeys,
   ColumnLabels,
+  ColumnObjectNormalized,
+  AllowedNames,
 } from './types'
 
-const completeObject = (obj: ColumnObjectOptional): ColumnObject => ({
-  key: obj.key,
-  label: obj.label || obj.key,
-  transform: obj.transform || String,
+const property = (key: string) =>
+  <T extends Record<typeof key, any>>(item: T) => item[key]
+
+const completeObject = <O>(obj: ColumnObject<O>): ColumnObjectNormalized<O> => ({
+  transform: typeof obj.prop === 'string' ? property(obj.prop) : obj.prop,
+  label: obj.label,
 })
 
-const simpleToObject = (key: string): ColumnObject => ({
-  key,
-  label: key,
-  transform: String,
+const simpleToObject = <O, K extends AllowedNames<O, string>>(key: K): ColumnObjectNormalized<O> => ({
+  transform: item => item[key],
+  label: key.toString(),
 })
 
-const normalizeColumns = (c: Column) =>
+const normalizeColumns = <O>(c: Column<O>) =>
   typeof c === 'object'
     ? completeObject(c)
     : simpleToObject(c)
@@ -29,11 +31,9 @@ export default <C extends Column>(columns: readonly C[]) => {
   return (item: Readonly<Obj<ColumnKeys<C>>>) => {
     // @ts-ignore
     const o: Record<ColumnLabels<C>, string> = {}
-    for (const { key, label, transform } of cols) {
+    for (const { transform, label } of cols) {
       // @ts-ignore
-      const val = item[key]
-      // @ts-ignore
-      o[label] = transform ? transform(val) : val
+      o[label] = transform(val)
     }
     return o
   }

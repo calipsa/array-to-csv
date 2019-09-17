@@ -9,16 +9,17 @@ function formatDate(dateStr: any) {
     : ''
 }
 
+const foo = item => formatDate(item.createdAt)
+
 const columns = [
   {
-    key: 'name',
     label: 'Name',
+    prop: 'name',
   },
   'parent',
   {
-    key: 'createdAt',
     label: 'Created at (UTC)',
-    transform: formatDate,
+    prop: (item: number) => formatDate(item.createdAt),
   },
   'count',
 ] as const
