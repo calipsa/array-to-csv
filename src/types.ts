@@ -13,7 +13,7 @@ export type ColumnObject = Required<ColumnObjectOptional>
 export type Column = string | ColumnObjectOptional
 
 // get only strings in union type
-type OnlyStrings<T> =  Extract<T, string>
+type OnlyStrings<T> = Extract<T, string>
 // get only objects in union type
 type OnlyObjects<T> = Extract<T, object>
 
